@@ -2,13 +2,21 @@
   "name": "meal-planner-user-meal-plan-service",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "vercel-build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+   "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
