@@ -1,14 +1,8 @@
-import express from 'express';
-import { connectDB } from './config/db';
+// src/server.ts
+import { app } from './app';
 
+const PORT = 3000;
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-app.use(express.json());
-
-connectDB();
-
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
