@@ -13,4 +13,4 @@ app.get('/', async (req, res) => {
   res.send('Hello, World!');
 });
 
-export { app };
+export default app;
