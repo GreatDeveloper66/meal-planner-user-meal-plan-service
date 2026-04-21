@@ -45,3 +45,4 @@ public
 # vuepress build output
 .vuepress/dist
 .vercel
+.env*.local
