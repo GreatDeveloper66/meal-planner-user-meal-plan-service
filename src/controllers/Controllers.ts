@@ -1,7 +1,16 @@
 import { Request, Response } from "express";
 import { UserMealPlanModel } from "../models/Models.js";
+import { connectDB } from "../config/db.js";
 
 export const createUserMealPlan = async (req: Request, res: Response) => {
+  try {
+    await connectDB();
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: "Server error while connecting to database",
+    });
+  }
   try {
     const userId = req.userId;
 
@@ -29,6 +38,14 @@ export const createUserMealPlan = async (req: Request, res: Response) => {
 };
 
 export const getUserMealPlan = async (req: Request, res: Response) => {
+   try {
+    await connectDB();
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: "Server error while connecting to database",
+    });
+  }
   try {
     const userId = req.userId;
 
@@ -51,6 +68,14 @@ export const getUserMealPlan = async (req: Request, res: Response) => {
 };
 
 export const deleteUserMealPlan = async (req: Request, res: Response) => {
+   try {
+    await connectDB();
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: "Server error while connecting to database",
+    });
+  }
   try {
     const userId = req.userId;
 
@@ -73,6 +98,14 @@ export const deleteUserMealPlan = async (req: Request, res: Response) => {
 };
 
 export const updateUserMealPlan = async (req: Request, res: Response) => {
+   try {
+    await connectDB();
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: "Server error while connecting to database",
+    });
+  }
   try {
     const userId = req.userId;
 
