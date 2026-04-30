@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { UserMealPlan } from "../data_types";
+import { UserMealPlan } from "../data_types/index.js";
 
 // --- Food ---
 const FoodSchema = new Schema(
