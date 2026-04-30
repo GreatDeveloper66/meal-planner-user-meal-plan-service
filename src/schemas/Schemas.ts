@@ -1,19 +1,18 @@
-import { z, date  } from "zod";
-import { id } from "zod/locales";
+import { z } from "zod";
 
 export const UserMealPlanSchema = z.object({
-    userId: id,
-    date: date(),
+    userId: z.string(),
+    date: z.coerce.date(),
     mealPlan: z.object({
-        id: id,
-        date: date(),
+        id: z.string(),
+        date: z.coerce.date(),
         meals: z.array(
             z.object({
-                id: id,
+                id: z.string(),
                 name: z.enum(["breakfast", "lunch", "dinner"]),
                 image: z.string().optional(),
                 foods: z.array(z.object({
-                    id: id,
+                    id: z.string(),
                     name: z.string(),
                     calories: z.number(),
                     protein: z.number(),
