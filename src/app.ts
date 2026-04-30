@@ -13,10 +13,10 @@ app.use(authenticationMiddleware);
 
 await connectDB(); // 👈 connect on demand
 
-app.post('/create-user-meal-plan', createUserMealPlan);
-app.get('/get-user-meal-plan', getUserMealPlan);
-app.patch('/update-user-meal-plan', updateUserMealPlan);
-app.delete('/delete-user-meal-plan', deleteUserMealPlan);
+app.post('api/create-user-meal-plan', createUserMealPlan);
+app.get('api/get-user-meal-plan', getUserMealPlan);
+app.patch('api/update-user-meal-plan', updateUserMealPlan);
+app.delete('api/delete-user-meal-plan', deleteUserMealPlan);
 
 
 app.get('/', async (req, res) => {
