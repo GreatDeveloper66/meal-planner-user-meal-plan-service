@@ -117,12 +117,12 @@ export const updateUserMealPlan = async (req: Request, res: Response) => {
 
     const mealPlanData = req.body;
 
-    const updated = await UserMealPlanModel.updateOne(
+    await UserMealPlanModel.updateOne(
       { userId },
       mealPlanData
     );
 
-    return res.status(200).json(updated);
+    return res.status(200).json(mealPlanData);
   } catch (err) {
     console.error(err);
 
